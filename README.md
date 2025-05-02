@@ -1,4 +1,4 @@
-🐍 CRUD em Flask
+🐍 Flask CRUD
 Um projeto de aplicação web simples com Flask, implementando operações de Create, Read, Update e Delete (CRUD) para gerenciamento de usuários.
 
 🚀 Funcionalidades
@@ -12,6 +12,7 @@ Flash messages com Bootstrap
 Proteção de rotas com login obrigatório
 
 🛠 Tecnologias usadas
+
 Python 3.x
 Flask
 SQLAlchemy
