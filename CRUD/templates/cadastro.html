@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="container d-flex justify-content-center">
+    <div class="card shadow p-4 col-md-6 col-lg-5">
+        <h3 class="text-center mb-4">{{ 'Editar Usuário' if editar else 'Cadastro de Usuário' }}</h3>
+
+        <form method="POST" novalidate>
+            {{ form.csrf_token }}
+
+            <div class="mb-3">
+                <label for="nome" class="form-label">
+                    <i class="bi bi-person-circle"></i> Nome
+                </label>
+                {{ form.nome(class="form-control", id="nome", placeholder="Digite seu nome") }}
+                {% for error in form.nome.errors %}
+                    <div class="form-text text-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">
+                    <i class="bi bi-envelope-fill"></i> Email
+                </label>
+                {{ form.email(class="form-control", id="email", placeholder="email@exemplo.com") }}
+                {% for error in form.email.errors %}
+                    <div class="form-text text-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+
+            <div class="mb-3">
+                <label for="senha" class="form-label">
+                    <i class="bi bi-lock-fill"></i> Senha
+                </label>
+                {{ form.senha(class="form-control", id="senha", placeholder="digite sua senha (mínimo de 6 caraceres)") }}
+                {% for error in form.senha.errors %}
+                    <div class="form-text text-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+
+            <div class="mb-3">
+                <label for="confirmar_senha" class="form-label">
+                    <i class="bi bi-lock-fill"></i> Confirmar senha
+                </label>
+                {{ form.confirmar_senha(class="form-control", id="confirmar_senha", placeholder="confirme a senha") }}
+                {% for error in form.confirmar_senha.errors %}
+                    <div class="form-text text-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">
+                    {{ 'Atualizar' if editar else 'Cadastrar' }}
+                </button>
+            </div>
+        </form>
+        <div class="text-center mt-3">
+            <a href="{{ url_for('login') }}">Já tem login? Clique aqui</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

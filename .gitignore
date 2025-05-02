@@ -1,0 +1,31 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Flask instance folder
+instance/
+
+# Cache
+.cache/
+.webassets-cache/
+
+# Arquivos de ambiente
+*.env
+
+# Logs e arquivos temporários
+*.log
+pip-log.txt
+pip-delete-this-directory.txt
+*.swp
+*.swo
+
+# Configurações de IDE (VSCode)
+.vscode/
